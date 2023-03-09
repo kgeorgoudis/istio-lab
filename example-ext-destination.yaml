@@ -26,5 +26,5 @@ spec:
   - timeout: 2s
     route:
       - destination:
-          host: google
+          host: google.com
         weight: 100
