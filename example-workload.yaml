@@ -16,10 +16,6 @@ metadata:
   namespace: workload
 spec:
   containers:
-  - args:
-    - sleep
-    - 120
+  - name: tester
     image: nginx
-    name: tester
   restartPolicy: Always
-
