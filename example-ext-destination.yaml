@@ -1,27 +1,29 @@
----
 apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
 metadata:
-  name: google
-  namespace: workload
+  name: ext-blacklines
+  namespace: demo
 spec:
   hosts:
-  - google.com
+  - www.blacklines.gr
   location: MESH_EXTERNAL
   ports:
   - number: 443
     name: https
-    protocol: TLS
+    protocol: HTTPS
+  - number: 80
+    name: http
+    protocol: HTTP
   resolution: DNS
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: google
-  namespace: workload
+  namespace: demo
 spec:
   hosts:
-    - google.com
+    - www.google.com
   http:
   - timeout: 2s
     route:
