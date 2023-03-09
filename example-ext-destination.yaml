@@ -6,13 +6,13 @@ metadata:
   namespace: workload
 spec:
   hosts:
-  - "www.google.com"
+  - google.com
+  location: MESH_EXTERNAL
   ports:
   - number: 443
     name: https
-    protocol: HTTPS
+    protocol: TLS
   resolution: DNS
-  location: MESH_EXTERNAL
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -21,10 +21,10 @@ metadata:
   namespace: workload
 spec:
   hosts:
-    - "www.google.com"
+    - google.com
   http:
   - timeout: 2s
     route:
       - destination:
-          host: "www.google.com"
+          host: google
         weight: 100
