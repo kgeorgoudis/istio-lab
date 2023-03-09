@@ -19,14 +19,17 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: google
+  name: ext-blacklines
   namespace: demo
 spec:
   hosts:
-    - www.google.com
+    - www.blacklines.gr
   http:
+  - match:
+    - uri:
+      prefix: "/code"
   - timeout: 2s
     route:
       - destination:
-          host: google.com
+          host: www.blacklines.gr
         weight: 100
