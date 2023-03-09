@@ -5,7 +5,7 @@ metadata:
   namespace: demo
 spec:
   hosts:
-  - blacklines.gr
+  - www.blacklines.gr
   location: MESH_EXTERNAL
   ports:
   - number: 443
@@ -23,9 +23,9 @@ metadata:
   namespace: demo
 spec:
   hosts:
-  - blacklines.gr
+  - www.blacklines.gr
   http:
   - timeout: 5s
     route:
     - destination:
-        host: blacklines.gr
+        host: www.blacklines.gr
