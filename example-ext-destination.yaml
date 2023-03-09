@@ -5,12 +5,12 @@ metadata:
   namespace: demo
 spec:
   hosts:
-  - www.blacklines.gr
+  - "*.blacklines.gr"
   location: MESH_EXTERNAL
   ports:
   - number: 443
     name: https
-    protocol: HTTPS
+    protocol: TLS
   - number: 80
     name: http
     protocol: HTTP
@@ -23,11 +23,11 @@ metadata:
   namespace: demo
 spec:
   hosts:
-  - www.blacklines.gr
+  - "*.blacklines.gr"
   tls:
   - match:
     - port: 443
-      sni_hosts:
+      sniHosts:
       - www.blacklines.gr
     route:
     - destination:
