@@ -17,7 +17,8 @@ metadata:
 spec:
   containers:
   - args:
-    - sh
+    - sleep
+    - 120
     image: nginx
     name: tester
   restartPolicy: Always
