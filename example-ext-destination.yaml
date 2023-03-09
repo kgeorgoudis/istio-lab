@@ -24,8 +24,11 @@ metadata:
 spec:
   hosts:
   - www.blacklines.gr
-  http:
-  - timeout: 5s
+  tls:
+  - match:
+    - port: 443
+      sni_hosts:
+      - www.blacklines.gr
     route:
     - destination:
         host: www.blacklines.gr
